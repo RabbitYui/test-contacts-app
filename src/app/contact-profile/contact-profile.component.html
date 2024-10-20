@@ -1,1 +1,7 @@
-<p>contact-profile works!</p>
+<div class="contact-profile">
+  <h1>Contact Profile</h1>
+  <form class="contact-profile__form" action="" [formGroup]="contactForm" (ngSubmit)="onSubmit(formModel)">
+    <formly-form [form]="contactForm" [fields]="contactFormFields" [model]="formModel"></formly-form>
+    <button mat-flat-button color="primary" type="submit" [disabled]="!contactForm.valid">Save</button>
+  </form>
+</div>
