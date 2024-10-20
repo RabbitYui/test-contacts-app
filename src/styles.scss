@@ -5,12 +5,14 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .container {
-  width: 100%;
   max-width: 1024px;
   margin: 0 auto;
   background: $container-bg;
-  padding: 1rem 2rem;
+  padding: 3vh 2vw;
   height: 100%;
+  @media (max-width: 1024px) {
+    margin: 0;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
