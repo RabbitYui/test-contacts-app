@@ -1,6 +1,11 @@
 <div class="contact-list">
+  <h1>Contacts</h1>
   <app-contact-card *ngFor="let contact of (contacts$ | async)"
+                    class="contact-list__item"
                     [contact]="contact"
                     (delete)="onContactDelete($event)"
                     (edit)="onContactEdit($event)"></app-contact-card>
+  <button mat-fab color="primary" class="contact-list__add-btn" (click)="onCreateContact()">
+    <mat-icon>add</mat-icon>
+  </button>
 </div>
