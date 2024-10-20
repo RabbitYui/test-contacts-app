@@ -15,4 +15,12 @@ export class ContactCardComponent {
     const lastName = this.contact?.lastName ? ` ${this.contact?.lastName}` : '';
     return this.contact?.firstName + lastName;
   }
+
+  get iconColor(): string {
+      return `rgb(${this.generateInt(0, 255)}, ${this.generateInt(0, 255)}, ${this.generateInt(0, 255)})`;
+  }
+
+  generateInt(min: number, max: number): number {
+    return Math.random() * (max - min) + min;
+  }
 }
