@@ -11,7 +11,6 @@ export const selectContactsCollection = createSelector(
 export const selectOneContact = (id: number | null) => createSelector(
   selectContacts,
   (contacts) => {
-    console.log(contacts, id);
     return contacts.find(contact => contact.id === id)
   }
 )

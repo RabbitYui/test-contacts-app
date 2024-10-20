@@ -1,1 +1,6 @@
-<p>contact-list works!</p>
+<div class="contact-list">
+  <app-contact-card *ngFor="let contact of (contacts$ | async)"
+                    [contact]="contact"
+                    (delete)="onContactDelete($event)"
+                    (edit)="onContactEdit($event)"></app-contact-card>
+</div>
