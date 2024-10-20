@@ -11,6 +11,8 @@ import { routes } from './app.routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { CustomValidators } from './utils/custom-validators';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { StoreModule } from '@ngrx/store';
+import { contactsReducer } from './storage/contacts.reducer';
 
 
 
@@ -33,6 +35,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
         { name: 'phone', message: 'Please enter a valid phone number' },
       ]
     }),
+    StoreModule.forRoot({contacts: contactsReducer}),
     ReactiveFormsModule,
     FormlyMaterialModule,
     ContactProfileComponent
