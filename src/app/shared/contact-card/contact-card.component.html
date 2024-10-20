@@ -9,10 +9,10 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="delete.emit(contact?.id)">
+        <button mat-menu-item (click)="edit.emit(contact?.id)">
           <span>Edit</span>
         </button>
-        <button mat-menu-item (click)="edit.emit(contact?.id)">
+        <button mat-menu-item (click)="delete.emit(contact?.id)">
           <span>Delete</span>
         </button>
       </mat-menu>
