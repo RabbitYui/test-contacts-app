@@ -14,3 +14,7 @@ export const selectOneContact = (id: number | null) => createSelector(
     return contacts.find(contact => contact.id === id)
   }
 )
+export const contactsLength = createSelector(
+  selectContacts,
+  (contacts) => contacts.length
+)
