@@ -14,7 +14,7 @@ export const selectOneContact = (id: number | null) => createSelector(
     return contacts.find(contact => contact.id === id)
   }
 )
-export const contactsLength = createSelector(
+export const contactsIdCounter = createSelector(
   selectContacts,
-  (contacts) => contacts.length
+  (contacts) => contacts.map(item => item.id).reduce((id1, id2) => Math.max(id1, id2), 1)
 )

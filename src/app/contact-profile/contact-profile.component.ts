@@ -7,7 +7,7 @@ import { take } from 'rxjs';
 import { MatButton } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
-import { contactsLength, selectOneContact } from '../storage/contacts.selectors';
+import { contactsIdCounter, selectOneContact } from '../storage/contacts.selectors';
 import { Contact } from '../shared/models/contact';
 import { ContactsActions } from '../storage/contacts.actions';
 
@@ -73,7 +73,7 @@ export class ContactProfileComponent implements OnInit {
     }
   ];
   contactId: number = 0;
-  contactsLength: number  = 0;
+  idCounter: number  = 0;
 
   constructor(activatedRoute: ActivatedRoute,
               private store: Store,
@@ -93,7 +93,7 @@ export class ContactProfileComponent implements OnInit {
 
   onSubmit(model: any): void {
     if (!this.contactId) {
-      this.contactId = this.contactsLength + 1;
+      this.contactId = this.idCounter + 1;
       this.createContact(model);
     } else {
       this.editContact(model);
@@ -109,7 +109,7 @@ export class ContactProfileComponent implements OnInit {
   }
 
   private loadContactsLength() {
-    this.store.select(contactsLength).pipe(take(1)).subscribe(res => this.contactsLength = res);
+    this.store.select(contactsIdCounter).pipe(take(1)).subscribe(res => this.idCounter = res);
   }
 
   private editContact(contact: Contact) {
